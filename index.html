@@ -1,0 +1,726 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <link rel="stylesheet" href="/ps3xploit.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <title>PS3Xploit Team -[ Making The PS3 Great Again!!! ]-</title>
+  <link href="./output.css" rel="stylesheet">
+</head>
+
+<body bgcolor="#ffffff" onload="info();">
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button"
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+  
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+  
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+              alt="Your Company">
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                aria-current="page">Dashboard</a>
+              <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+              <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+              <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button type="button"
+            class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+            <span class="absolute -inset-1.5"></span>
+            <span class="sr-only">View notifications</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+            </svg>
+          </button>
+
+          <!-- Profile dropdown -->
+          <div class="relative ml-3">
+            <div>
+              <button type="button"
+                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <span class="absolute -inset-1.5"></span>
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full"
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="">
+              </button>
+            </div>
+
+            <!--
+              Dropdown menu, show/hide based on menu state.
+  
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+            <div
+              class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+              <!-- Active: "bg-gray-100", Not Active: "" -->
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                id="user-menu-item-0">Your Profile</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                id="user-menu-item-1">Settings</a>
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                id="user-menu-item-2">Sign out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+          aria-current="page">Dashboard</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+        <a href="#"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <ul class="pureCssMenu pureCssMenum">
+    <li class="pureCssMenui"><a class="pureCssMenui" href="http://ps3xploit.me/">PS3Xploit</a></li>
+    <li class="pureCssMenui"><a class="pureCssMenui"
+        href="#"><span>PS3HEN</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hen/installer/auto/index.html" title="HEN Auto Installer"
+            target="_blank">HEN Auto Installer</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hen/installer/index.html"
+            title="HEN Installer (thanks lmn7)" target="_blank">HEN Installer/Enabler</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="https://ps3addict.github.io/alternate/"
+            title="HEN Installer (RemotePlay) (thanks lmn7, DeViL303, xp3riments)" target="_blank">HEN
+            Installer (Alternate)</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.90
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/490/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.90 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.90_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.89
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/489/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.89 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.89_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.88
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/488/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.88 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.88_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.87
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/487/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.87 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.87_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.86
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/486/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.86 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.86_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.85
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/485/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.85 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.85_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.84
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/484/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.84 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.84_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.83
+              HFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/483/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.83 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.83_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.82
+              OFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/482/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.82 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.82_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.81
+              OFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/481/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.81 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.81_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.80
+              OFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hen/release/480/cex/installer/Latest_HEN_Installer_signed.pkg" title="HEN Installer PKG 4.80 CEX"
+                target="_blank">HEN Installer PKG</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.80_FW.zip"
+                title="Download Release Files" target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>** Developers Only
+              **</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/blind/" title="Enable HAN + Blind Flash"
+                target="_blank">Enable HAN Blind Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/rewrite/" title="Enable HAN + Rewrite Flash"
+                target="_blank">Enable HAN ReWrite Flash</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.82_DEX_FW.zip"
+                title="4.82 DEX OFW" target="_blank">4.82 DEX OFW</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2_4.84_DEX_FW.zip"
+                title="4.84 DEX HFW" target="_blank">4.84 DEX HFW</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hen/release/PS3HEN_3.2.2-Developers-Only.zip"
+                title="Download Developer Files" target="_blank">Download Developer Files</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="https://github.com/PS3Xploit/PS3HEN"
+                title="PS3HEN Source" target="_blank">PS3HEN Source</a></li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Report a
+              Bug</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="https://www.psx-place.com/threads/support-thread-ps3hen-bugs-problems-and-other-issues.37327/"
+                title="Main Support Thread" target="_blank">Main Support Thread</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="https://www.psx-place.com/forums/PS3HEN/"
+                title="PSX-Place HEN Forum" target="_blank">PSX-Place HEN Forum</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="https://www.ps3toolset.com" target="_blank"><span>BG
+          Toolset</span><!--[if gt IE 6]--></a><!--[endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="https://www.ps3toolset.com/bgtoolset/" title="Main Site"
+            target="_blank">Main Site</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="https://www.ps3toolset.com/bgtoolset/index.php#tblog"
+            title="Show Logs" target="_blank">Show Logs</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="https://www.psx-place.com/threads/introducing-the-ps3-toolset-by-bguerville-a-powerful-collection-of-tools-fueled-by-new-ps3-exploit.28658/"
+            title="PSX-Place Thread" target="_blank">PSX-Place Thread</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="https://www.psx-place.com/threads/bg-toolset-user-issues-and-dump-submissions.28868/"
+            title="User Issues and Submitted Dumps Thread" target="_blank">User Issues Thread</a></li>
+      </ul>
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>v3 HAN
+          Tools</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>* Extra Tools *</span></a>
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Cold Boot Installer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/coldboot/coldboot_installer.html"
+                    title="Cold Boot Installer" target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/coldboot_installer_488HFW-release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Debug Settings
+                  Installer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Install Debug
+                      Files</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/debug_settings_installer/debug_settings_installer.html" title="Install Debug Files"
+                        target="_blank">Run This Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Swap Debug
+                      Settings</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/debug_settings_installer/debug_settings_swapper.html" title="Swap Debug Settings"
+                        target="_blank">Run This Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Swap XMB Menu
+                      Plugin</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/debug_settings_installer/xmb_plugin_swapper.html" title="Swap XMB Menu Plugin"
+                        target="_blank">Run This Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/debug_settings_installer_484HFW_release-PS3Xploit.zip"
+                    title="Download Release Files" target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Game Boot Installer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/gameboot_installer/gameboot_installer.html"
+                    title="Game Boot Installer" target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/gameboot_installer_488HFW-release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Font Replacer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>TTF Fonts</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_font_replacer/flash_font_replacer.html" title="Font Replacer [TTF Fonts]"
+                        target="_blank">Run This Tool Now</a>
+                    </li>
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/release/font_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                        target="_blank">Download Release
+                        Files</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>TTF Fonts
+                      (SONY-CC)</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_font_replacer/flash_font_replacer_sony_cc.html"
+                        title="Font Replacer [TTF Fonts SONY-CC]" target="_blank">Run This Tool
+                        Now</a></li>
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/release/font_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                        target="_blank">Download Release
+                        Files</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Image Font
+                      Replacer</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/imagefont/imagefont_replacer.html"
+                        title="Image Font Replacer [imagefont.bin]" target="_blank">Run This
+                        Tool Now</a></li>
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/release/imagefont_replacer_488HFW_release-PS3Xploit.zip"
+                        title="Download Release Files" target="_blank">Download Release
+                        Files</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>IDPS/PSID/Minver Dump</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/idps_psid_minver_dumper/idps_psid_minver_dumper.html" title="IDPS/PSID/Minver Dumper"
+                    target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/idps_psid_minver_dumper_488HFW_release-PS3Xploit.zip"
+                    title="Download Release Files" target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>RCO Replacer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/flash_rco_replacer/flash_rco_replacer.html"
+                    title="RCO Resource Replacer" target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/rco_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>SELF Replacer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>BD Player</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_self_replacer/flash_self_replacer_bdplayer.html"
+                        title="SELF Replacer [BD Player]" target="_blank">Run This Tool Now</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>PS1 Emulator</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_self_replacer/flash_self_replacer_ps1emu.html"
+                        title="SELF Replacer [PS1 Emulator]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>PS2 Emulator</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_self_replacer/flash_self_replacer_ps2emu.html"
+                        title="SELF Replacer [PS2 Emulator]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>PSP Emulator</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_self_replacer/flash_self_replacer_pspemu.html"
+                        title="SELF Replacer [PSP Emulator]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>VSH Module
+                      Directory</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_self_replacer/flash_self_replacer_vsh_module.html"
+                        title="SELF Replacer [VSH Module Directory]" target="_blank">Run This
+                        Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/self_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>SPRX Replacer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>VSH Modules</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_sprx_replacer/flash_sprx_replacer_module.html"
+                        title="SPRX Replacer [VSH Modules]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Internal
+                      Libraries</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_sprx_replacer/flash_sprx_replacer_sys_internal.html"
+                        title="SPRX Replacer [Internal Libraries]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>External
+                      Libraries</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/flash_sprx_replacer/flash_sprx_replacer_sys_external.html"
+                        title="SPRX Replacer [External Libraries]" target="_blank">Run This Tool
+                        Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/sprx_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>SSL Certificate Tools</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>SSL Certificate
+                      Injector</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/ssl_cert_injector_remover/ssl_cert_injector.html" title="SSL Certificate Injector"
+                        target="_blank">Run This Tool Now</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>SSL Certificate
+                      Remover</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/ssl_cert_injector_remover/ssl_cert_remover.html" title="SSL Certificate Remover"
+                        target="_blank">Run This Tool Now</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/ssl_cert_injector_remover_488HFW_release-PS3Xploit.zip"
+                    title="Download Release Files" target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>XMB Wave Installer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/xmb_wave_installer/xmb_wave_installer.html"
+                    title="XMB Wave Installer" target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/xmb_wave_installer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>XML Replacer</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/flash_xml_replacer/flash_xml_replacer.html"
+                    title="XML Replacer [XMB Layout]" target="_blank">Run This Tool Now</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/xml_replacer_488HFW_release-PS3Xploit.zip" title="Download Release Files"
+                    target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>xRegistry Tools</span></a>
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>xRegistry
+                      Dumper</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/xregistry_dumper_injector/xregistry_dumper.html" title="xRegistry Dumper"
+                        target="_blank">Run This Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>xRegistry
+                      Injector</span></a>
+                  <ul class="pureCssMenum">
+                    <li class="pureCssMenui"><a class="pureCssMenui"
+                        href="hfw/xregistry_dumper_injector/xregistry_injector.html" title="xRegistry Injector"
+                        target="_blank">Run This Tool Now</a></li>
+                  </ul>
+                </li>
+                <li class="pureCssMenui"><a class="pureCssMenui"
+                    href="hfw/release/xregistry_dumper_injector_488HFW_release-PS3Xploit.zip"
+                    title="Download Release Files" target="_blank">Download Release Files</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/han/actidps_dumper.html" title="ACT/IDPS Dumper"
+            target="_blank">ACT/IDPS Dumper</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/han/actrif_copier.html" title="ACT/RIF Copier"
+            target="_blank">ACT/RIF Copier</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/han/han_installer.html" title="HAN Installer"
+            target="_blank">HAN Installer</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/han/han_enabler.html" title="HAN Enabler"
+            target="_blank">HAN Enabler</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/han/dbgpkg_enabler.html" title="Debug PKG Enabler"
+            target="_blank">Debug PKG Enabler</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/release/han_supportfiles.zip"
+            title="Download Local Files" target="_blank">Download Support Files</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="hfw/release/ps3_tools-v3.0.5-HAN488_HFW_release_PS3Xploit.zip" title="Download Release Files"
+            target="_blank">Download Release Files</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="https://github.com/PS3Xploit/PS3xploit-resigner"
+            title="etHANol Resigner Tool" target="_blank">etHANol Resigner Tool</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="https://www.psx-place.com/threads/hfw-4-89-1-hybrid-firmware-official-release.37319/"
+            title="HFW (Hybrid Firmware)" target="_blank">HFW (Hybrid Firmware)</a></li>
+        <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+      </ul>
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Flash
+          Dumper</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui"><span>4.80-4.88
+              OFW/HFW/CFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>4.10-4.85 Legacy
+              Tools</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul class="pureCssMenum">
+            <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/dumper/index_idps.html" title="Dump IDPS To USB"
+                target="_blank">Dump IDPS</a></li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Dump Flash To
+                  USB</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/dumper/index_nand.html"
+                    title="Dump NAND/eMMC To USB" target="_blank">NAND/eMMC</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/dumper/index_nor.html"
+                    title="Dump NOR To USB" target="_blank">NOR</a></li>
+              </ul>
+              <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Dump Flash To
+                  HDD</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+              <ul class="pureCssMenum">
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/dumper/index_nand_hdd.html"
+                    title="Dump NAND/eMMC To HDD" target="_blank">NAND/eMMC</a></li>
+                <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/dumper/index_nor_hdd.html"
+                    title="Dump NOR To HDD" target="_blank">NOR</a></li>
+              </ul>
+              <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+            <li class="pureCssMenui"><a class="pureCssMenui"
+                href="hfw/release/NOR_NAND_IDPS_dumper_release_2.0.2_PS3Xploit.zip" title="Download Release File"
+                target="_blank">Download Release Files</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Flash
+          Writer</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui"><span>4.80-4.88
+              OFW/HFW/CFW</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+        </li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="https://www.psx-place.com/threads/ps3xploit-flash-writer-4-90-hfw.39744/"
+            title="Unofficial Flash Writer for 4.90" target="_blank">4.90 HFW (thanks lmn7)</a></li>
+      </ul>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui"
+        href="#"><span>StoreHaxx</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="storehaxx/StoreHaxx_4.83_IDPS_PSID_Dumping_Method-PS3Xploit.pkg" title="Download HAN Signed Package"
+            target="_blank">Download Package</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui"
+            href="storehaxx/StoreHaxx_4.83_IDPS_PSID_Dumping_Method-PS3Xploit.zip" title="Download Release Files"
+            target="_blank">Download Release Files</a></li>
+      </ul>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui" href="#"><span>Other
+          Tools</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/beep_test/beep_test.html" title="Beep Test"
+            target="_blank">Beep Test</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="hfw/led_status_test/led_status_test.html"
+            title="LED Status Test" target="_blank">LED Status Test</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="tutorial/PS3Xploit_Tutorial_Files.zip"
+            title="WebKit ROP Tutorials">WebKit ROP Tutorials</a></li>
+      </ul>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui"
+        href="#"><span>Links</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="http://www.psx-place.com" title="Visit PSX-Place"
+            target="_blank">PSX-Place</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="https://gab.com/PS3Xploit" title="Social Media Account"
+            target="_blank">Social Media Account</a></li>
+      </ul>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+    <li class="pureCssMenui"><a class="pureCssMenui"
+        href="#"><span>Help</span><!--[if gt IE 6]--></a><!--[endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+      <ul class="pureCssMenum">
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/faq.html"
+            title="Read Frequently Asked Questions">FAQ</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/changelog.html"
+            title="Official Changelog">Changelog</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/dumper.html" title="Help With Dumper Tool">Using
+            Dumpers</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/writer.html" title="Help With Writer Tool">Using
+            Writer</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/han.html" title="Using v3 HAN">Using v3
+            HAN</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/han_extra.html" title="Using v3 Extra Tools">Using
+            v3
+            Extra Tools</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/storehaxx.html" title="Using StoreHaxx">Using
+            StoreHaxx</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/hen.html" title="Using StoreHaxx">Using
+            PS3HEN</a></li>
+        <li class="pureCssMenui"><a class="pureCssMenui" href="help/bgtoolset.html"
+            title="How To Use The bguerville PS3 Toolset">Using BG Toolset</a></li>
+      </ul>
+      <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+    </li>
+  </ul>
+  <a id="pcm" href=""></a>
+</body>
+
+</html>
