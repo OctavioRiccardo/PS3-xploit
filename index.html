@@ -14,54 +14,80 @@
 
 
 <body bgcolor="#ffffff" onload="info();">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-      <img src="" alt="Bootstrap" width="30" height="24">
-      </a>
-      <a class="navbar-brand" href="#">PS3Xploit</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-         
-          <li class="nav-item">
-            <div class="dropdown">
-                <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  PS3 HEN
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="hen/installer/auto/index.html" title="HEN Auto Installer"target="_blank">HEN Auto Installer</a>
-                  </li>
-                  <li>
-                    <a href="hen/installer/index.html"title="HEN Installer (thanks lmn7)" target="_blank">HEN Installer/Enabler</a>
-                  </li>
-                  <li>
-                    <a href="https://ps3addict.github.io/alternate/"title="HEN Installer (RemotePlay) (thanks lmn7, DeViL303, xp3riments)" target="_blank">HEN Installer (Alternate)</a>
-                  </li>
+  
+  <style>
 
-                  <button type="button" class="btn dropdown-toggle">
-                    HFW 4.90
-                  </button>
-                   <ul class="dropdown-menu">
-                    <a href="hen/rewrite/" title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a>
-                   </ul>
-                        
-                  
-                </ul>
-            </div>
-          </li>
+    a:link:not(#exclude), a:visited:not(#exclude) {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    }
+    .sub-menu:hover .hen-menu {
+      display: block;
+    }
 
-          <li class="nav-item">        
-          </li>
-          <li class="nav-item">
-          </li>
+    .sub-menu2:hover .our-pick-menu {
+      display: block;
+    }
+  </style>
+  
+  <div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="/img/ps3xploit-logo.png" alt="Bootstrap" width="150" height="80">
+        </a>
+      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
           
-        </ul>
+            <li class="nav-item">
+              <div class="dropdown">
+                  <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    PS3 HEN
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="hen/installer/auto/index.html" title="HEN Auto Installer"target="_blank">HEN Auto Installer</a>
+                    </li>
+                    <li>
+                      <a href="hen/installer/index.html"title="HEN Installer (thanks lmn7)" target="_blank">HEN Installer/Enabler</a>
+                    </li>
+                    <li>
+                      <a href="https://ps3addict.github.io/alternate/"title="HEN Installer (RemotePlay) (thanks lmn7, DeViL303, xp3riments)" target="_blank">HEN Installer (Alternate)</a>
+                    </li>
+
+                    <div class="dropdown">
+                      <li class="sub-menu">
+                        <a href="#" class="dropdown-item dropdown-toggle" data-toggle="dropdown">hfw 4.90</a>
+                        <ul class="dropdown-menu   hen-menu">
+                           <li>
+                            <a href="hen/rewrite/"title="Enable HAN + Rewrite Flash" target="_blank">Enable HAN ReWrite Flash</a>
+                          </li>
+                        </ul>     
+                      </li>
+                    </div>      
+                      
+              
+                  </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">        
+            </li>
+            <li class="nav-item">
+            </li>
+            
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
+  
+ 
 
          
