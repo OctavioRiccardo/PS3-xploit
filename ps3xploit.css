@@ -13,20 +13,17 @@
 
  ul.pureCssMenu ul {
      position: absolute;
-     left: -1px;
-     top: 98%;
+   ;
  }
 
  ul.pureCssMenu ul ul {
      position: absolute;
-     left: 98%;
-     top: -2px;
- }
+    
 
  ul.pureCssMenu,
  ul.pureCssMenu ul {
      margin: auto;
-     width: 50%;
+     width: 40%;
      list-style: none;
      
      
