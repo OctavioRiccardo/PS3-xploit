@@ -4,6 +4,7 @@
 
  ul.pureCssMenu ul {
      display: none
+    
  }
 
  ul.pureCssMenu li:hover>ul {
@@ -263,7 +264,8 @@
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     /* font-weight: <weight>; */
-    font-style: normal;
+    font-style:normal ;
+    font-size:x-large  ;
 }
 .img-center {
     width: 100%;
